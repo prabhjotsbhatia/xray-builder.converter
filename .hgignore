@@ -1,0 +1,8 @@
+syntax: glob
+*.exe
+*.asc
+*.pdb
+*.config
+*.manifest
+*.cache
+XRay2Converter/bin/x86/Debug/TestDB.sqlite
