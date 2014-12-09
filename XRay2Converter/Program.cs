@@ -66,6 +66,8 @@ namespace XRay2Converter
             SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
             Console.WriteLine("\nBuilding new X-ray database. May take a few minutes...");
             command.ExecuteNonQuery();
+            command = new SQLiteCommand("PRAGMA user_version = 1", m_dbConnection);
+            command.ExecuteNonQuery();
             Console.WriteLine("Done building initial database. Populating with info from source X-Ray...");
             test.PopulateDB(m_dbConnection, args[1]);
             Console.WriteLine("Updating indices...");
